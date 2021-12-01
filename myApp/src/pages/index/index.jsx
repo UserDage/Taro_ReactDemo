@@ -8,6 +8,7 @@ export default class Index extends Component {
   render() {
     return (
       <View className='index'>
+        <AtButton></AtButton>
         <Text>Hello world!</Text>
         <h2>你好你好啊！</h2>
       </View>
