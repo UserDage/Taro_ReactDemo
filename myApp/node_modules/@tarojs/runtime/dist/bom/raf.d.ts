@@ -1,0 +1,5 @@
+/// <reference types="node" />
+export declare let now: any;
+declare const raf: typeof requestAnimationFrame | ((callback: any) => NodeJS.Timeout);
+declare const caf: typeof cancelAnimationFrame;
+export { raf, caf };
