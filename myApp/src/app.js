@@ -1,4 +1,5 @@
 import { Component } from "react";
+import "default-passive-events";
 import "taro-ui/dist/style/index.scss";
 import "./app.less";
 class App extends Component {
