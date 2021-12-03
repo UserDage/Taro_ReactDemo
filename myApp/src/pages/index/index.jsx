@@ -1,9 +1,10 @@
 import { Component } from 'react'
-import { View, Text, Swiper, SwiperItem } from '@tarojs/components'
-import { AtSearchBar, AtGrid, AtTabBar, AtCard } from 'taro-ui'
+import Taro from '@tarojs/taro'
+import { View, Swiper, SwiperItem } from '@tarojs/components'
+import { AtSearchBar, AtGrid, AtList, AtListItem } from 'taro-ui'
 import image from './img'
 import './index.less'
-const { cityOne, livable, line, Salitun, imgone, imgTwo, imgThree, imgFour, Main, Search, MyInfo, Consult } = image
+const { chuzu, cityOne, livable, line, Salitun, imgone, imgTwo, imgThree, imgFour } = image
 export default class Index extends Component {
   state = {
     value: '',
@@ -37,22 +38,6 @@ export default class Index extends Component {
       image: imgFour,
       value: '去出租'
     }],
-    bottom: [{
-      title: '首页',
-      image: Main
-    },
-    {
-      title: '搜索',
-      image: Search
-    },
-    {
-      title: '咨询',
-      image: Consult
-    },
-    {
-      title: '我的',
-      image: MyInfo
-    }],
     recomment: [{
       title: '家住回龙观<br/>归属的感觉',
       image: cityOne
@@ -72,6 +57,7 @@ export default class Index extends Component {
   }
   BotmNav = (current) => {
     this.setState({ current: current })
+    Taro.navigateTo({ url: 'pages/about/index' })
   }
   render() {
     return (
@@ -122,17 +108,35 @@ export default class Index extends Component {
             </div>
           </View>
         </View>
-        {/* 租房小组结束 */}
-        {/* 底部开始*/}
-        <AtTabBar
-          current={this.state.current}
-          backgroundColor='white'
-          tabList={this.state.bottom}
-          fixed
-          onClick={this.BotmNav}
-        >
-        </AtTabBar>
-        {/*底部结束 */}
+        {/* 租房小结束 */}
+        <View className='consult'>
+          <div className='Info'>
+            <span style={{ display: 'block', marginBottom: 5 }}><b>最新资讯</b></span>
+            <img src={chuzu} alt="" />
+            <div style={{ width: '40%' }}><b>置业佳选|大理皇宫苍山洱海间的箍牙别院</b></div>
+            <div className='bot' style={{ width: '40%' }}>新华网<div>两天前</div></div>
+          </div>
+          <div className='Info'>
+            <img src={chuzu} alt="" />
+            <div style={{ width: '40%' }}><b>置业佳选|大理皇宫苍山洱海间的箍牙别院</b></div>
+            <div className='bot' style={{ width: '40%' }}>新华网<div>两天前</div></div>
+          </div>
+          <div className='Info'>
+            <img src={chuzu} alt="" />
+            <div style={{ width: '40%' }}><b>置业佳选|大理皇宫苍山洱海间的箍牙别院</b></div>
+            <div className='bot' style={{ width: '40%' }}>新华网<div>两天前</div></div>
+          </div>
+          <div className='Info'>
+            <img src={chuzu} alt="" />
+            <div style={{ width: '40%' }}><b>置业佳选|大理皇宫苍山洱海间的箍牙别院</b></div>
+            <div className='bot' style={{ width: '40%' }}>新华网<div>两天前</div></div>
+          </div>
+          <div className='Info'>
+            <img src={chuzu} alt="" />
+            <div style={{ width: '40%' }}><b>置业佳选|大理皇宫苍山洱海间的箍牙别院</b></div>
+            <div className='bot' style={{ width: '40%' }}>新华网<div>两天前</div></div>
+          </div>
+        </View>
       </View>
     )
   }
